@@ -59,6 +59,10 @@ static void av1_video_info(void *data, struct video_scale_info *info)
 	case VIDEO_FORMAT_P010:
 		info->format = VIDEO_FORMAT_I010;
 		break;
+	/* Allow 444 for av1 encoders in Standard recording settings */
+	case VIDEO_FORMAT_I444: 
+		info->format = VIDEO_FORMAT_I444;
+		break;
 	default:
 		info->format = VIDEO_FORMAT_I420;
 	}
